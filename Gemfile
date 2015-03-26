@@ -40,3 +40,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'coffee-script-source', '1.8.0'
 gem 'bootstrap-sass'
 gem 'datagrid'
+gem 'devise', '~>3.4.1'
