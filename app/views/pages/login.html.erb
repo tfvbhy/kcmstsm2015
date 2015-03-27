@@ -1,4 +1,8 @@
 <h1>KCM STSM 2015 Login</h1>
+<% if user_signed_in? %>
+	YOU BROKE THE SITE
+<% else %>
 <p>
 	<%= link_to "Create New User", new_user_registration_path %>
 </p>
+<% end %>  
