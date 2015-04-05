@@ -1,6 +1,6 @@
 class FinancesController < ApplicationController
   before_action :set_finance, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, except: [:index]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
   respond_to :html
 
@@ -43,7 +43,7 @@ class FinancesController < ApplicationController
     end
 	
 	def correct_user
-	  @finance = current_user.finance.find_by(id: params[:id])
+	  @finance = current_user.finances.find_by(id: params[:id])
 	  redirect_to finances_path, notice: "Not authorized to edit this" if @finance.nil?
     end
 
