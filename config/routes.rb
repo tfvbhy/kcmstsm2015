@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :finances
+
+  resources :teams
+
+  resources :schools
+
+  resources :years
+
   devise_for :users
   root "pages#login"
   get "traineeFinance" => "pages#traineeFinance"

@@ -11,7 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150326231426) do
+ActiveRecord::Schema.define(version: 20150405010501) do
+
+  create_table "finances", force: true do |t|
+    t.string   "audit"
+    t.decimal  "cash_amount"
+    t.decimal  "check_amount"
+    t.decimal  "check_number"
+    t.integer  "data_entry"
+    t.string   "note"
+    t.string   "supporter_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "finances", ["user_id"], name: "index_finances_on_user_id"
+
+  create_table "schools", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teams", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,5 +57,11 @@ ActiveRecord::Schema.define(version: 20150326231426) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "years", force: true do |t|
+    t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

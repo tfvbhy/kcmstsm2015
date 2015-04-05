@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Audit:</strong>
+  <%= @finance.audit %>
+</p>
+
+<p>
+  <strong>Cash amount:</strong>
+  <%= @finance.cash_amount %>
+</p>
+
+<p>
+  <strong>Check amount:</strong>
+  <%= @finance.check_amount %>
+</p>
+
+<p>
+  <strong>Check number:</strong>
+  <%= @finance.check_number %>
+</p>
+
+<p>
+  <strong>Data entry:</strong>
+  <%= @finance.data_entry %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @finance.note %>
+</p>
+
+<p>
+  <strong>Supporter name:</strong>
+  <%= @finance.supporter_name %>
+</p>
+
+<%= link_to 'Edit', edit_finance_path(@finance) %> |
+<%= link_to 'Back', finances_path %>
